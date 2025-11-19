@@ -1,0 +1,88 @@
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --accent: #bb86fc; /* Un viola neon leggero */
+    --font: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+p { opacity: 0.8; }
+
+/* La Griglia */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Le Card delle Recensioni */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.card-content { padding: 1.5rem; }
+
+.tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+h2 { margin: 0.5rem 0; font-size: 1.5rem; }
+
+/* Il Bottone */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+}
+
+footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.8rem; }
