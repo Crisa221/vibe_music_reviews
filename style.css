@@ -1,8 +1,17 @@
 :root {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-main: #e0e0e0;
-    --accent: #bb86fc; /* Un viola neon leggero */
+    /* Sfondo: Un crema caldo, come carta antica */
+    --bg-color: #fdf6e3;
+    
+    /* Card: Un bianco leggermente più caldo per staccare dal fondo */
+    --card-bg: #ffffff;
+    
+    /* Testo: Un marrone scuro/grigio, molto più riposante del nero */
+    --text-main: #4a4036;
+    
+    /* Accento: Un terracotta/arancio bruciato per i dettagli */
+    --accent: #d3865e;
+    
+    /* Font: Manteniamo quello pulito */
     --font: 'Inter', sans-serif;
 }
 
@@ -39,11 +48,14 @@ p { opacity: 0.8; }
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Aggiungiamo un bordo sottilissimo per definire meglio la card sul chiaro */
+    border: 1px solid rgba(0,0,0,0.05); 
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    /* Un'ombra più calda e diffusa */
+    box-shadow: 0 15px 30px rgba(74, 64, 54, 0.15);
 }
 
 .card-image {
@@ -71,8 +83,8 @@ h2 { margin: 0.5rem 0; font-size: 1.5rem; }
     display: inline-block;
     margin-top: 1rem;
     text-decoration: none;
-    color: var(--text-main);
-    border: 1px solid var(--text-main);
+    color: var(--text-main); /* Colore testo scuro */
+    border: 1px solid var(--text-main); /* Bordo scuro */
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -82,7 +94,120 @@ h2 { margin: 0.5rem 0; font-size: 1.5rem; }
 .btn:hover {
     background-color: var(--accent);
     border-color: var(--accent);
-    color: #000;
+    color: #fff; /* Testo bianco quando ci passi sopra */
 }
 
 footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.8rem; }
+
+/* Assicurati che l'immagine riempia tutto lo spazio disponibile */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <-- QUESTA è la chiave! */
+    display: block;
+}
+
+/* --- Stili per la Pagina Recensione --- */
+
+/* Il contenitore del testo: più stretto per leggere meglio */
+.review-container {
+    max-width: 700px;
+    margin: 4rem auto; /* Più spazio sopra e sotto */
+    padding: 0 20px;
+}
+
+/* Header della recensione */
+.review-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.review-header h1 {
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+/* Il badge del voto */
+.rating-badge {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(211, 134, 94, 0.3); /* Ombra leggera color terracotta */
+}
+
+/* Una citazione elegante per spezzare il testo */
+blockquote {
+    border-left: 5px solid var(--accent);
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.5); /* Sfondo leggerissimo */
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #6d5f50; /* Un marrone leggermente più chiaro */
+}
+
+/* Stile per la "Traccia Preferita" o liste */
+.track-list {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+/* --- Stili per il Track-by-Track --- */
+
+.track-list-container {
+    margin-top: 3rem;
+}
+
+.track-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(74, 64, 54, 0.1); /* Una linea sottile separatrice */
+}
+
+/* Toglie la linea all'ultimo brano */
+.track-item:last-child {
+    border-bottom: none;
+}
+
+.track-header {
+    display: flex;
+    justify-content: space-between; /* Titolo a sx, Voto a dx */
+    align-items: baseline; /* Allinea il testo sulla base */
+    margin-bottom: 0.5rem;
+}
+
+.track-title {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.track-number {
+    opacity: 0.5;
+    margin-right: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.track-rating {
+    color: var(--accent); /* Color terracotta */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Il testo della recensione del singolo brano */
+.track-review {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
