@@ -4,8 +4,7 @@
 
 Questo progetto è un blog statico (HTML/CSS) progettato per recensire album con un focus analitico **traccia per traccia**. L'estetica è pensata per essere rilassante (colori crema, terracotta, dark grey), invitando alla lettura lenta accompagnata dall'ascolto in alta fedeltà.
 
-![Preview del Sito](img/preview.jpg)
-*(Nota: Carica uno screenshot della tua home nella cartella img e chiamalo preview.jpg per vederlo qui)*
+
 
 ## ✨ Caratteristiche
 
