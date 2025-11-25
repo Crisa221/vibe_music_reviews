@@ -211,3 +211,21 @@ blockquote {
     opacity: 0.9;
     margin: 0;
 }
+
+/* --- Stili per il Player Musicale --- */
+
+.music-player-wrapper {
+    margin-top: 1.5rem; /* Spazio tra il testo e il player */
+    border-radius: 8px; /* Arrotondiamo gli angoli del player */
+    overflow: hidden;   /* Assicura che l'iframe non esca dai bordi arrotondati */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Un'ombra leggerissima */
+    background-color: #000; /* Fondo nero per evitare flash bianchi mentre carica */
+}
+
+/* Questa regola serve a forzare l'iframe a stare buono nel suo box */
+.music-player-wrapper iframe {
+    width: 100%;
+    height: 96px; /* Altezza fissa per la barra singola */
+    display: block;
+    border: none;
+}
