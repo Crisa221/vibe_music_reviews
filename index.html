@@ -1,99 +1,208 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe Music Reviews</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Music — Il significato dietro le canzoni</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>🎵 Vibe Music.</h1>
-        <p>Solo recensioni oneste e buona musica.</p>
-    </header>
+<header>
+  <nav>
+    <a href="index.html" class="logo">Vibe<span>Music</span></a>
+    <ul class="nav-links">
+      <li><a href="#articoli">Articoli</a></li>
+      <li><a href="#artisti">Artisti</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <main class="grid-container">
-        
-        <article class="card">
-            <div class="card-image" style="background-color: #333;"> 
-               <img src="img/deadbeat_cover.webp" alt="Copertina DeadBeat Tame Impala">
-            </div>
-            <div class="card-content">
-                <span class="tag">Indie Rock</span>
-                <h2>Tame Impala - DeadBeat</h2>
-                <p>Vivi l'esperienza dei rave party australiani con questo album unico.</p>
-                <a href="recensioni/album-1.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+<section class="hero fade-up">
+  <div>
+    <p class="hero-label">Il significato dietro i suoni</p>
+    <h1>Cosa ti <em>racconta</em> davvero la musica</h1>
+    <p class="hero-sub">Analisi approfondite dei brani che contano. Non recensioni, non classifiche — il significato nascosto dentro ogni traccia.</p>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">3</span>
+        <p class="stat-label">Artisti</p>
+      </div>
+      <div>
+        <span class="stat-num">12+</span>
+        <p class="stat-label">Analisi</p>
+      </div>
+      <div>
+        <span class="stat-num">1</span>
+        <p class="stat-label">Autore</p>
+      </div>
+    </div>
+  </div>
 
-        <article class="card">
-            <div class="card-image" style="background-color: #444;">
-                <img src="img/addison_rae_addison.webp" alt="Copertina Addison Rae - Addison">
-            </div>
-            <div class="card-content">
-                <span class="tag">Pop</span>
-                <h2>Addison Rae - Addison</h2>
-                <p>La dolcezza di Addison Rae in un album pop che rievoca i fasti del 2000.</p>
-                <a href="recensioni/album-2.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+  <a class="hero-featured" href="articles/tame-impala-dracula.html">
+    <img src="img/deadbeat_cover.webp" alt="Tame Impala - Dracula">
+    <span class="featured-badge">In evidenza</span>
+    <div class="hero-featured-content">
+      <span class="tag">Tame Impala</span>
+      <h2>Dracula — Vivere nell'oscurità per non fermarsi</h2>
+      <p>Tame Impala · DeadBeat · 2025</p>
+    </div>
+  </a>
+</section>
 
-        <article class="card">
-            <div class="card-image" style="background-color: #444;">
-                <img src="img/locket.webp" alt="Copertina Madison Beer - Locket">
-            </div>
-            <div class="card-content">
-                <span class="tag">Pop</span>
-                <h2>Madison Beer - Locket</h2>
-                <p>COMING SOON</p>
-                <a href="recensioni/album-3.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+<div class="section-divider" id="articoli">
+  <h2>Ultimi articoli</h2>
+</div>
 
-        <article class="card">
-            <div class="card-image" style="background-color: #444;">
-                <img src="img/crux.webp" alt="Copertina Djo - Crux (Deluxe Edition)">
-            </div>
-            <div class="card-content">
-                <span class="tag">Indie Rock</span>
-                <h2>Djo - Crux (Deluxe Edition)</h2>
-                <p>COMING SOON</p>
-                <a href="recensioni/album-4.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards('tutti', this)">Tutti</button>
+  <button class="filter-btn" onclick="filterCards('tame-impala', this)">Tame Impala</button>
+  <button class="filter-btn" onclick="filterCards('addison-rae', this)">Addison Rae</button>
+  <button class="filter-btn" onclick="filterCards('madison-beer', this)">Madison Beer</button>
+</div>
 
-        <article class="card">
-            <div class="card-image" style="background-color: #444;">
-                <img src="img/chaliewuther.webp" alt="Copertina Charli XCX - Wuthering Heights">
-            </div>
-            <div class="card-content">
-                <span class="tag">Pop</span>
-                <h2>Charli XCX - Wuthering Heights</h2>
-                <p>COMING SOON</p>
-                <a href="recensioni/album-5.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+<div class="articles-grid fade-up-delay" id="articlesGrid">
 
-        <article class="card">
-            <div class="card-image" style="background-color: #444;">
-                <img src="img/mitski.webp" alt="Copertina Mitski - Nothing's about to happen to me">
-            </div>
-            <div class="card-content">
-                <span class="tag">Indie Pop</span>
-                <h2>Mitski - Nothing's about to happen to me</h2>
-                <p>COMING SOON</p>
-                <a href="recensioni/album-6.html" class="btn">Leggi Recensione →</a>
-            </div>
-        </article>
+  <a class="article-card" href="articles/tame-impala-afterthought.html" data-artist="tame-impala">
+    <div class="card-img">
+      <img src="img/deadbeat_cover.webp" alt="Tame Impala">
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag"><span class="tag">Tame Impala</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-meta">DeadBeat · 2025</p>
+      <h3 class="card-title">Afterthought — Scusarsi quando ormai è troppo tardi</h3>
+      <p class="card-excerpt">Kevin Parker confessa tutto in 4 minuti. Un capolavoro sul peso del rimorso e l'incapacità di tornare indietro.</p>
+      <div class="card-footer">
+        <span class="card-read">Leggi analisi</span>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </a>
 
-    </main>
+  <a class="article-card" href="articles/tame-impala-dracula.html" data-artist="tame-impala">
+    <div class="card-img">
+      <img src="img/deadbeat_cover.webp" alt="Tame Impala - Dracula">
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag"><span class="tag">Tame Impala</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-meta">DeadBeat · 2025</p>
+      <h3 class="card-title">Dracula — La paura di fermarsi e affrontare la luce</h3>
+      <p class="card-excerpt">Bassi aggressivi e un synth inquietante: il singolo più ballabile dell'album nasconde la terrificante paura dei propri pensieri.</p>
+      <div class="card-footer">
+        <span class="card-read">Leggi analisi</span>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </a>
 
-    <footer>
-        <p>&copy; 2025 Vibe Music Blog</p>
-    </footer>
+  <a class="article-card" href="articles/tame-impala-ethereal.html" data-artist="tame-impala">
+    <div class="card-img">
+      <img src="img/deadbeat_cover.webp" alt="Tame Impala">
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag"><span class="tag">Tame Impala</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-meta">DeadBeat · 2025</p>
+      <h3 class="card-title">Ethereal Connection — L'addio impossibile all'amore irrazionale</h3>
+      <p class="card-excerpt">7 minuti e 42 secondi di puro godimento. Un connubio tra Justice, Chemical Brothers e Daft Punk per dire addio a ciò che non si può tenere.</p>
+      <div class="card-footer">
+        <span class="card-read">Leggi analisi</span>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </a>
+
+  <a class="article-card" href="articles/addison-rae-headphones.html" data-artist="addison-rae">
+    <div class="card-img">
+      <img src="img/addison_rae_addison.webp" alt="Addison Rae">
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag"><span class="tag">Addison Rae</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-meta">Addison · 2024</p>
+      <h3 class="card-title">Headphones On — Accettare il dolore con una sigaretta</h3>
+      <p class="card-excerpt">Un brano downtempo che racconta la resa davanti a qualcosa che fa male. Pop anni 2000 con un cuore spezzato.</p>
+      <div class="card-footer">
+        <span class="card-read">Leggi analisi</span>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </a>
+
+  <div class="article-card coming-soon" data-artist="madison-beer">
+    <div class="card-img">
+      <img src="img/locket.webp" alt="Madison Beer">
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag"><span class="tag">Madison Beer</span></div>
+      <span class="coming-soon-badge">Prossimamente</span>
+    </div>
+    <div class="card-body">
+      <p class="card-meta">Locket · 2025</p>
+      <h3 class="card-title">In arrivo — Analisi dei brani di Madison Beer</h3>
+      <p class="card-excerpt">Le nuove analisi sull'album Locket sono in arrivo. Torna presto.</p>
+      <div class="card-footer">
+        <span class="card-read">Prossimamente</span>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-divider" id="artisti" style="margin-top: 5rem;">
+  <h2>Artisti</h2>
+</div>
+
+<div class="artists-row">
+  <a class="artist-card" href="#" onclick="filterCards('tame-impala', null); document.getElementById('articoli').scrollIntoView(); return false;">
+    <img src="img/deadbeat_cover.webp" alt="Tame Impala">
+    <div class="artist-overlay">
+      <p class="artist-name">Tame Impala</p>
+      <p class="artist-count">3 analisi · Psychedelic Rock</p>
+    </div>
+  </a>
+  <a class="artist-card" href="#" onclick="filterCards('addison-rae', null); document.getElementById('articoli').scrollIntoView(); return false;">
+    <img src="img/addison_rae_addison.webp" alt="Addison Rae">
+    <div class="artist-overlay">
+      <p class="artist-name">Addison Rae</p>
+      <p class="artist-count">1 analisi · Pop</p>
+    </div>
+  </a>
+  <a class="artist-card" href="#">
+    <img src="img/locket.webp" alt="Madison Beer">
+    <div class="artist-overlay">
+      <p class="artist-name">Madison Beer</p>
+      <p class="artist-count">Prossimamente · Pop</p>
+    </div>
+  </a>
+</div>
+
+<div class="glitch-line"></div>
+
+<footer>
+  <span class="footer-logo">VibeMusic</span>
+  <p class="footer-copy">© 2025 — Analisi di Nicolò Crisafulli</p>
+</footer>
+
+<script>
+  function filterCards(artist, btn) {
+    const cards = document.querySelectorAll('.article-card');
+    cards.forEach(card => {
+      if (artist === 'tutti' || card.dataset.artist === artist) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    if (btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  }
+</script>
 
 </body>
 </html>
