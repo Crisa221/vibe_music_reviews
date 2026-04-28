@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Vibe Music</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── ABOUT-SPECIFIC STYLES ── */
+
+  .about-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem) 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .about-hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--purple);
+  }
+
+  .about-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-hero h1 em {
+    font-style: normal;
+    color: var(--purple);
+    display: block;
+  }
+
+  .about-hero-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(232, 228, 240, 0.75);
+    margin-bottom: 1.2rem;
+  }
+
+  /* Avatar / visual side */
+  .about-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-avatar-wrap {
+    position: relative;
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-avatar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), transparent 60%);
+    z-index: 0;
+  }
+
+  .about-avatar-wrap::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    z-index: 0;
+  }
+
+  .about-avatar {
+    position: relative;
+    z-index: 1;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: var(--bg3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .about-avatar-initials {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.1em;
+    color: var(--purple);
+    opacity: 0.4;
+    user-select: none;
+  }
+
+  .about-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  /* ── DIVIDER ── */
+  .about-divider {
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .about-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-soft);
+  }
+
+  .about-divider span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── MISSION BLOCK ── */
+  .mission-block {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .mission-card {
+    background: var(--bg2);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .mission-card:hover {
+    border-color: var(--border);
+    transform: translateY(-3px);
+  }
+
+  .mission-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .mission-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .mission-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── QUOTE ── */
+  .about-quote {
+    max-width: 800px;
+    margin: 5rem auto 0;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    text-align: center;
+  }
+
+  .about-quote blockquote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    position: relative;
+  }
+
+  .about-quote blockquote em {
+    font-style: normal;
+    color: var(--purple);
+  }
+
+  .about-quote cite {
+    display: block;
+    margin-top: 1.25rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* ── CONTACTS ── */
+  .contacts-block {
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 600px;
+  }
+
+  .contact-card {
+    background: var(--bg2);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .contact-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-2px);
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .about-hero {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .about-hero-label {
+      justify-content: center;
+    }
+
+    .about-visual {
+      order: -1;
+    }
+
+    .about-avatar-wrap {
+      width: 200px;
+      height: 200px;
+    }
+
+    .about-avatar {
+      width: 200px;
+      height: 200px;
+    }
+
+    .mission-block {
+      grid-template-columns: 1fr;
+    }
+
+    .contacts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Vibe<span>Music</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#articoli">Articoli</a></li>
+      <li><a href="index.html#artisti">Artisti</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="about-hero fade-up">
+  <div>
+    <p class="about-hero-label">Chi c'è dietro Vibe Music</p>
+    <h1>Ciao, sono <em>Nicolò.</em></h1>
+    <p class="about-hero-text">
+      Ho 32 anni, lavoro in un negozio di abbigliamento e ascolto musica da quando ne avevo 6. Non è mai stata solo una passione — è sempre stata qualcosa di più vicino a una storia d'amore. Quella che non finisce mai.
+    </p>
+    <p class="about-hero-text">
+      Canto in un coro, e questo mi ha insegnato che la musica non si ascolta soltanto — si vive. Ogni nota, ogni testo porta dentro qualcosa che va oltre le parole. E io non riuscivo a smettere di pensarci.
+    </p>
+    <p class="about-hero-text">
+      Così ho aperto Vibe Music.
+    </p>
+  </div>
+
+  <div class="about-visual">
+    <div class="about-glow"></div>
+    <div class="about-avatar-wrap">
+      <div class="about-avatar">
+        <span class="about-avatar-initials">NC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="about-divider">
+  <span>La missione</span>
+</div>
+
+<!-- MISSION -->
+<div class="mission-block fade-up-delay">
+  <div class="mission-card">
+    <span class="mission-icon">🎵</span>
+    <p class="mission-title">Il significato nascosto</p>
+    <p class="mission-text">Ogni brano che ascoltiamo ogni giorno nasconde qualcosa. Un'emozione, una storia, un momento di vita. Qui lo portiamo in superficie.</p>
+  </div>
+  <div class="mission-card">
+    <span class="mission-icon">🎭</span>
+    <p class="mission-title">La musica è arte</p>
+    <p class="mission-text">Come un quadro o un film, la musica ci fa ridere, piangere, innamorare. Non è sottofondo — è un linguaggio. E ogni linguaggio merita di essere capito.</p>
+  </div>
+  <div class="mission-card">
+    <span class="mission-icon">🔊</span>
+    <p class="mission-title">Non recensioni</p>
+    <p class="mission-text">Non trovi voti o classifiche qui. Solo analisi oneste, scritte da chi la musica la sente davvero — e vuole condividere quella sensazione.</p>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="about-quote">
+  <blockquote>
+    La musica ci suscita <em>emozioni</em> che nessun'altra arte riesce a fare allo stesso modo.
+  </blockquote>
+  <cite>— Nicolò, fondatore di Vibe Music</cite>
+</div>
+
+<!-- DIVIDER -->
+<div class="about-divider" style="margin-top: 5rem;">
+  <span>Contatti</span>
+</div>
+
+<!-- CONTACTS -->
+<div class="contacts-block fade-up-delay">
+  <div class="contacts-grid">
+
+    <a class="contact-card" href="https://instagram.com/vibemusic" target="_blank" rel="noopener">
+      <div class="contact-icon">📸</div>
+      <div>
+        <p class="contact-label">Instagram</p>
+        <p class="contact-value">@vibemusic</p>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://tidal.com/@nicocrysa" target="_blank" rel="noopener">
+      <div class="contact-icon">🎧</div>
+      <div>
+        <p class="contact-label">Tidal</p>
+        <p class="contact-value">@nicocrysa</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="glitch-line" style="margin-top: 6rem;"></div>
+
+<footer>
+  <span class="footer-logo">VibeMusic</span>
+  <p class="footer-copy">© 2025 — Nicolò Crisafulli</p>
+</footer>
+
+</body>
+</html>
